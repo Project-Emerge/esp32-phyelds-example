@@ -1,0 +1,9 @@
+[project]
+name = "esp32-micropython-example"
+version = "0.1.0"
+description = "MicroPython examples for ESP32-C6 Dropbot boards"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mpremote>=1.29.0",
+]
