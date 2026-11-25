@@ -10,8 +10,19 @@ The aggregate computing examples use [Phyelds](https://github.com/phyelds/phyeld
 - Python 3.13 and [uv](https://docs.astral.sh/uv/).
 - Two or more boards for the communication examples.
 
-The pin assignments in `board.py` are specific to the Dropbot hardware. The firmware binary is not stored in this repository; 
-obtain the appropriate ESP32-C6 firmware from [MicroPython downloads](https://micropython.org/download/ESP32_GENERIC_C6/).
+The pin assignments in `board.py` are specific to the Dropbot hardware.
+
+## Flash MicroPython
+
+The firmware binary is not stored in this repository. Download
+[ESP32_GENERIC_C6-20260824-v1.29.0.bin](https://micropython.org/resources/firmware/ESP32_GENERIC_C6-20260824-v1.29.0.bin)
+(other versions on [MicroPython downloads](https://micropython.org/download/ESP32_GENERIC_C6/)), connect the board and run once:
+
+```sh
+uv sync
+uv run esptool --chip esp32c6 erase-flash
+uv run esptool --chip esp32c6 write-flash 0 ESP32_GENERIC_C6-20260824-v1.29.0.bin
+```
 
 ## Deploy
 
